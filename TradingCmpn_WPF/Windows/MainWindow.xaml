@@ -1,0 +1,27 @@
+﻿<Window x:Class="TradingCmpn_WPF.Windows.MainWindow"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:views="clr-namespace:TradingCmpn_WPF.Views"
+       Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="255*"/>
+            <ColumnDefinition Width="149*"/>
+            <ColumnDefinition Width="121*"/>
+        </Grid.ColumnDefinitions>
+
+        <TabControl Margin="0,0,-82,0" Grid.ColumnSpan="3">
+            <TabItem Header="Order History">
+                <views:OrderHistoryView DataContext="{Binding OrderHistoryViewModel}" Margin="0,0,22,0" />
+            </TabItem>
+
+            <TabItem Header="Products">
+                <views:ProductView DataContext="{Binding ProductViewModel}" />
+            </TabItem>
+
+            <TabItem Header="Reviews">
+                <views:ReviewView DataContext="{Binding ReviewViewModel}" />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

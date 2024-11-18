@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="TradingCmpn_WPF.Views.ReviewView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Height="400" Width="600">
+    <StackPanel Margin="10">
+        <TextBlock Text="Select Product:" FontWeight="Bold" Margin="0,0,0,5" />
+        <ComboBox ItemsSource="{Binding Products}" DisplayMemberPath="ProductName" SelectedItem="{Binding SelectedProduct}" Width="200" />
+
+        <TextBlock Text="Write Review:" FontWeight="Bold" Margin="0,10,0,5" />
+        <TextBox Text="{Binding ReviewText, UpdateSourceTrigger=PropertyChanged}" 
+                 Width="400" Height="100" AcceptsReturn="True" />
+        <Button Content="Submit Review" Command="{Binding SubmitReviewCommand}" Margin="0,10,0,5" />
+
+        <TextBlock Text="Previous Reviews:" FontWeight="Bold" Margin="0,10,0,5" />
+        <Button Content="Load All Reviews" Command="{Binding LoadAllReviewsCommand}" />
+        <ListBox ItemsSource="{Binding Reviews}" DisplayMemberPath="ReviewText" Width="500" Height="200" />
+
+        <!-- Кнопка для завантаження всіх відгуків -->
+    </StackPanel>
+</UserControl>
